@@ -1,0 +1,46 @@
+# ============================================================
+# SIGA - Exclusiones globales del repositorio
+# ============================================================
+
+# Variables de entorno y secretos del backend
+Backend/.env
+Backend/.env.*
+!Backend/.env.example
+
+# Variables de entorno y secretos del frontend
+Frontend/.env
+Frontend/.env.*
+!Frontend/.env.example
+
+# Dependencias del backend
+Backend/vendor/
+
+# Dependencias y compilaciones del frontend
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.angular/cache/
+Frontend/coverage/
+
+# Archivos temporales y logs
+*.log
+*.tmp
+*.temp
+~$*
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editores e IDE
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Resultados de pruebas y cobertura
+.phpunit.cache/
+.phpunit.result.cache
+coverage/

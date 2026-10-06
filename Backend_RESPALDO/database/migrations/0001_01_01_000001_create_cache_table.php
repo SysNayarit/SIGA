@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Create the database-backed cache tables.
+     */
+    public function up(): void
+    {
+        Schema::create('system.cache', function (Blueprint $table) {
+            $table->string('key')->primary();
+            $table->mediumText('value');
+            $table->bigInteger('expiration')->index();
+        });
+
+        Schema::create('system.cache_locks', function (Blueprint $table) {
+            $table->string('key')->primary();
+            $table->string('owner');
+            $table->bigInteger('expiration')->index();
+        });
+    }
+
+    /**
+     * Drop the database-backed cache tables.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('system.cache_locks');
+        Schema::dropIfExists('system.cache');
+    }
+};
