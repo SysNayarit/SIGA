@@ -1,13 +1,11 @@
 ﻿import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// El nombre exacto del archivo '.ts' y de la clase puede variar ligeramente según lo generó Angular.
+import { Login } from './presentation/pages/login/login'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [Login], // Inyectamos el Login
+  templateUrl: './app.html'
 })
-export class App {
-  title = 'SIGA - Sistema Integral de Gestión Académica';
-}
+export class App {}
