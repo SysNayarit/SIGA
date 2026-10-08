@@ -1,1 +1,0 @@
-<?php $u = App\Models\User::firstOrCreate(["email" => "admin@siga.gob.mx"], ["name" => "Administrador SIGA", "password" => bcrypt("Secret123!")]); echo "Token: " . $u->createToken("test-token")->plainTextToken . PHP_EOL;
